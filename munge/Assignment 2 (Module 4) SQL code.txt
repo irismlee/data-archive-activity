@@ -1,0 +1,39 @@
+CREATE TABLE employee_sales
+(
+Attrition string,
+Department string,
+JobSatisfaction int,
+MonthlyIncome int
+);
+
+
+INSERT OVERWRITE TABLE employee_sales
+SELECT Attrition, Department, JobSatisfaction, MonthlyIncome
+FROM employee;
+
+SELECT * FROM employee_sales LIMIT 10;
+
+
+INSERT OVERWRITE TABLE employee_sales
+ELECT Attrition, Department, JobSatisfaction, ROUND(MonthlyIncome, -3) AS MonthlyIncome
+FROM employee_sales;
+
+
+SELECT * FROM employee_sales LIMIT 10;
+
+
+INSERT OVERWRITE TABLE employee_sales
+SELECT *
+FROM employee_sales
+WHERE Department LIKE "%Sales%";
+
+
+SELECT * FROM employee_sales LIMIT 10;
+
+
+INSERT OVERWRITE TABLE employee_sales
+SELECT *
+FROM employee_sales
+ORDER BY JobSatisfaction DESC;
+
+SELECT * FROM employee_sales LIMIT 10;
