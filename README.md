@@ -7,8 +7,13 @@ After loading the data, I had to transform the data to focus on the columns that
 
 Directory structure:
 project/
+
   data/
+	
   munge/
+	
   reports/
+	
   src/
+	
   README.md
